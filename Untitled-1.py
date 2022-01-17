@@ -3,7 +3,7 @@
 import random
 from re import T
 from tkinter import*
-
+tt
 #----HÁTTÉRBEN FUTÓ ÉRTÉKEK----
 n = 0
 num = 0
