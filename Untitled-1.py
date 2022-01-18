@@ -3,7 +3,7 @@
 import random
 from re import T
 from tkinter import*
-tt
+
 #----HÁTTÉRBEN FUTÓ ÉRTÉKEK----
 n = 0
 num = 0
@@ -39,7 +39,7 @@ print("Szabályok:")
 print("1.Ne nézze meg a megoldásokat")
 print("2.Nem ér netről lesni")
 print("3.Érezze jól magát")
-
+print(num)
 #----COMMAND----
 #Itt a commandnak megadott csoportott fejthetjük ki
 def open():
@@ -67,7 +67,7 @@ def wardrobe():
     print("\"Pici szálfa, villog, serceg, nem ég tovább csak egy percet\"")
     print("Vajon mi lehet ez?")
     #Ismétel (ha elrontja a felhasználó akkor is úrja próbálhatja)
-    while True:
+    while num != 1:
         megold = input("Megoldás: ")
         #Ha sikerült eltalálnia akkor tovább jut
         if megold == "Gyufa" or megold == "gyufa":
@@ -76,8 +76,24 @@ def wardrobe():
             print("Sikerült!")
             print("Egy kodós aktatáska van itt és egy papír")
             print("\"Négy keréken szaladgál, repül, mint a gyors madár. Szíve helyén motor dohog, fékezz, megáll, továbbrobog\"")
-            num = n + 1
-            break
+            num = num + 1
+            
+            while n != 0:
+                megold1 = input("Megoldás: ")
+                #Ha sikerült eltalálnia akkor tovább jut
+                if megold1 == "auto" or megold1 == "Auto" or megold1 == "autó" or megold1 == "Autó" or megold1 == "kocsi" or megold1 == "Kocsi":
+                    print("kinyílt!")
+                    print("Megint egy papír van benne")
+                    code1 = random.randint(1,3)
+                    print("Egy", code1, "van ráírva. Elteszem hátha még jó lesz valamire")    
+                    n = n + 1
+        
+                else:
+                    print("Nem jó")
+                    print()
+                    print()
+                    print("\"Négy keréken szaladgál, repül, mint a gyors madár. Szíve helyén motor dohog, fékezz, megáll, továbbrobog\"")
+                
         #Ha nem sikerül akkor újból meg kell próbálnia    
         else:
             print("Nem nyílik, biztos valami más lesz az.")
@@ -155,3 +171,4 @@ taska.pack(side = TOP)
 #----MEGJELENÍTÉS----
 #Megjeleniti a gombokat/gombot
 taska.mainloop()
+
